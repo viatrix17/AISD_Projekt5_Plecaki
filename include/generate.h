@@ -1,0 +1,2 @@
+
+void generate(object *backpack);
