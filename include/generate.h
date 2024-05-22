@@ -1,2 +1,1 @@
-
-void generate(object *backpack);
+//idk co z tym generowaniem
