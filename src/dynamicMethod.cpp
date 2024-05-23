@@ -32,13 +32,6 @@ void displayResult(object *backpack, int **costMatrix, int N, int C) {
 }
 
 void dynamicMethod(object *backpack, int N, int C) {
-
-    // object backpack[4];
-    // int C = 8;
-    // backpack[0].w = 2; backpack[0].p = 4;
-    // backpack[1].w = 1; backpack[1].p = 3;
-    // backpack[2].w = 4; backpack[2].p = 6;
-    // backpack[3].w = 4; backpack[3].p = 8;
     int **costMatrix;
     costMatrix = new int*[N+1];
     for(int i = 0; i < N+1; i++) {

@@ -2,8 +2,8 @@
 #define OBJECT_STRUCT_H
 
 struct object{
-    int w;  //objetosc
-    int p;  //wartosc
+    int w;  //waga (weight)
+    int p;  //wartość (price)
 };
 
 #endif
