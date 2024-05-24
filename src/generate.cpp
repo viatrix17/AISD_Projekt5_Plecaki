@@ -1,1 +1,7 @@
-//tu idk co bo tam jest, zeby to do pliku generowac, a potem z pliku zczytywac, wiec w osobnym programie czy cos
+#include <iostream>
+
+#include "../include/object_struct.h"
+
+void generate(object *backpack, int N, int C){
+    std::cout << "test\n";
+}
