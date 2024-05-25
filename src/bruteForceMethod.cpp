@@ -28,6 +28,8 @@ int suma_wartosci(object *backpack, int X)
 }
 
 void bruteForceMethod(object *backpack, int N, int C) {
+    std::cout << "\nbruteForceMethod() :\n";
+
     int fmax = 0, rozwiazanie;
     for (int X = 1; X < pow(2, N); X++) {
         if (suma_wag(backpack, X) <= C) {

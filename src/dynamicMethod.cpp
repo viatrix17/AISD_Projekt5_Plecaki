@@ -31,10 +31,8 @@ void displayResult(object *backpack, int **costMatrix, int N, int C) {
 }
 
 void dynamicMethod(object *backpack, int N, int C) {
+    std::cout << "\ndynamicMethod() :\n";
 
-    // object backpack[4];
-    // int C = 8;
-    
     int **costMatrix;
     costMatrix = new int*[N+1];
     for(int i = 0; i < N+1; i++) {
