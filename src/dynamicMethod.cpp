@@ -20,7 +20,7 @@ void findResult(object *backpack, int **costMatrix, int N, int C) {
 void displayResult(object *backpack, int **costMatrix, int N, int C) {
     std::cout << "Max value of backpack: " << costMatrix[N][C] << "\nPacked elements: ";
     int i = N, j = C;
-    while(i > 0 && j > 0){
+    while(i > 0 && j > 0) {
             if(costMatrix[i][j] != costMatrix[i-1][j]) {
                 std::cout << i << " ";
                 j -= backpack[i-1].w;
