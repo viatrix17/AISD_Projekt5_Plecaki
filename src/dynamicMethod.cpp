@@ -1,6 +1,4 @@
-#include <iostream>
-
-#include "../include/object_struct.h"
+#include "../include/define_include.h"
 
 void findResult(object *knapsack, int **costMatrix, int N, int C) {
     int a;
@@ -31,7 +29,7 @@ void displayResult(object *knapsack, int **costMatrix, int N, int C) {
 }
 
 void dynamicMethod(object *knapsack, int N, int C) {
-    std::cout << "\ndynamicMethod() :\n";
+    std::cout << "\nDynamic Method:\n";
 
     int **costMatrix;
     costMatrix = new int*[N+1];

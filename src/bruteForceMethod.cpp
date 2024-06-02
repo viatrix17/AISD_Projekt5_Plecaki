@@ -1,7 +1,4 @@
-#include <iostream>
-#include <math.h>
-
-#include "../include/object_struct.h"
+#include "../include/define_include.h"
 
 int weight_sum(object *knapsack, int X) {
     int suma = 0, i = 0;
@@ -24,7 +21,7 @@ int value_sum(object *knapsack, int X) {
 }
 
 void bruteForceMethod(object *knapsack, int N, int C) {
-    std::cout << "\nbruteForceMethod() :\n";
+    std::cout << "\nBrute Force Method :\n";
 
     int fmax = 0, result;
     for (int X = 1; X < pow(2, N); X++) {
