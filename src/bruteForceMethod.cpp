@@ -3,50 +3,46 @@
 
 #include "../include/object_struct.h"
 
-int suma_wag(object *backpack, int X)
-{
-    int suma = 0;
-    int i = 0;
+int weight_sum(object *knapsack, int X) {
+    int suma = 0, i = 0;
     while (X > 0) {
-        suma += (X % 2) * backpack[i].w;
+        suma += (X % 2) * knapsack[i].w;
         X /= 2;
         i++;
     }
     return suma;
 }
 
-int suma_wartosci(object *backpack, int X)
-{
-    int suma = 0;
-    int i = 0;
+int value_sum(object *knapsack, int X) {
+    int suma = 0, i = 0;
     while (X > 0) {
-        suma += (X % 2) * backpack[i].p;
+        suma += (X % 2) * knapsack[i].p;
         X /= 2;
         i++;
     }
     return suma;
 }
 
-void bruteForceMethod(object *backpack, int N, int C) {
+void bruteForceMethod(object *knapsack, int N, int C) {
     std::cout << "\nbruteForceMethod() :\n";
 
-    int fmax = 0, rozwiazanie;
+    int fmax = 0, result;
     for (int X = 1; X < pow(2, N); X++) {
-        if (suma_wag(backpack, X) <= C) {
-            if (suma_wartosci(backpack, X) > fmax) {
-                fmax = suma_wartosci(backpack, X);
-                rozwiazanie = X;
+        if (weight_sum(knapsack, X) <= C) {
+            if (value_sum(knapsack, X) > fmax) {
+                fmax = value_sum(knapsack, X);
+                result = X;
             }
         }
     }
 
-    std::cout << "Max value of backpack: " << fmax << "\nPacked elements: ";
+    std::cout << "Max value of Bottomless Bag: " << fmax << "\nPacked elements: ";
     int i = 0;
-    while (rozwiazanie > 0) {
-        if (rozwiazanie % 2) {
+    while (result > 0) {
+        if (result % 2) {
             std::cout << i+1 << " ";
         }
-        rozwiazanie /= 2;
+        result /= 2;
         i++;
     }
     std::cout << "\n";

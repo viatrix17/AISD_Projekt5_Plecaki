@@ -6,7 +6,7 @@
 
 #include "../include/object_struct.h"
 
-void generate(object *backpack, int N, int C) {
+void generate(object *knapsack, int N, int C) {
     int P;
     std::cout << "[generate]\twczytywanie maksymalnej możliwej wartości przedmiotu...\n";
     std::cin >> P;
@@ -17,16 +17,16 @@ void generate(object *backpack, int N, int C) {
 
     std::ofstream outfile("backpack.txt");
     if (!outfile) {
-        std::cout << "Błąd otwarcia pliku\n";
+        std::cout << "Error opening file.\n";
         return;
     }
 
     outfile << C << '\n' << N << '\n';
 
     for (int i = 0; i < N; ++i) {
-        backpack[i].w = dist_weight(rng);
-        backpack[i].p = dist_price(rng);
-        outfile << backpack[i].p << ' ' << backpack[i].w << '\n';
+        knapsack[i].w = dist_weight(rng);
+        knapsack[i].p = dist_price(rng);
+        outfile << knapsack[i].p << ' ' << knapsack[i].w << '\n';
     }
 
     outfile.close();

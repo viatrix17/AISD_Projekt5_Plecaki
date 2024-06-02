@@ -1,3 +1,3 @@
 #include "object_struct.h"
 
-void generate(object *backpack, int N, int C);
+void generate(object *knapsack, int N, int C);

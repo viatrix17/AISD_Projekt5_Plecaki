@@ -1,3 +1,3 @@
 #include "object_struct.h"
 
-void dynamicMethod(object *backpack, int N, int C);
+void dynamicMethod(object *knapsack, int N, int C);

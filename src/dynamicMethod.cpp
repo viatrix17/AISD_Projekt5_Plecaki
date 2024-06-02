@@ -2,35 +2,35 @@
 
 #include "../include/object_struct.h"
 
-void findResult(object *backpack, int **costMatrix, int N, int C) {
+void findResult(object *knapsack, int **costMatrix, int N, int C) {
     int a;
     for(int i = 1; i < N+1; i++) {
         for(int j = 1; j < C+1; j++) {
             a = i-1;
-            if(backpack[a].w > j) {
+            if(knapsack[a].w > j) {
                 costMatrix[i][j] = costMatrix[i-1][j];
             }
             else{
-                costMatrix[i][j] = std::max(costMatrix[i-1][j], costMatrix[i-1][j-backpack[a].w] + backpack[a].p);
+                costMatrix[i][j] = std::max(costMatrix[i-1][j], costMatrix[i-1][j-knapsack[a].w] + knapsack[a].p);
             }
         }   
     }
 }
 
-void displayResult(object *backpack, int **costMatrix, int N, int C) {
-    std::cout << "Max value of backpack: " << costMatrix[N][C] << "\nPacked elements: ";
+void displayResult(object *knapsack, int **costMatrix, int N, int C) {
+    std::cout << "Max value of Bottomless Bag: " << costMatrix[N][C] << "\nPacked elements: ";
     int i = N, j = C;
     while(i > 0 && j > 0) {
             if(costMatrix[i][j] != costMatrix[i-1][j]) {
                 std::cout << i << " ";
-                j -= backpack[i-1].w;
+                j -= knapsack[i-1].w;
             }
             i -= 1;
     }
     std::cout << "\n";
 }
 
-void dynamicMethod(object *backpack, int N, int C) {
+void dynamicMethod(object *knapsack, int N, int C) {
     std::cout << "\ndynamicMethod() :\n";
 
     int **costMatrix;
@@ -45,8 +45,8 @@ void dynamicMethod(object *backpack, int N, int C) {
         }
     }
 
-    findResult(backpack, costMatrix, N, C);
-    displayResult(backpack, costMatrix, N, C);
+    findResult(knapsack, costMatrix, N, C);
+    displayResult(knapsack, costMatrix, N, C);
 
     for (int i = 0; i < N+1; i++) {
         delete[] costMatrix[i];
