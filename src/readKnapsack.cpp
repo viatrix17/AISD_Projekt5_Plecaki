@@ -3,7 +3,7 @@
 void readKnapsack(object *&knapsack, int &N, int &C) {
     std::ifstream infile("knapsack.txt");
     if (!infile) {
-        std::cerr << "Error opening file\n" << std::endl;
+        std::cerr << "Error opening the file. The file must be named 'knapsack.txt'\n" << std::endl;
         exit(0);
     }
 
